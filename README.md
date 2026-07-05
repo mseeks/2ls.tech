@@ -9,11 +9,9 @@ in a browser and that's 2ls.tech.
 
 ## Design
 
-The identity is the **"Rewrite" mark** (study 02 in
-[`two-ls-logos-expressive.html`](two-ls-logos-expressive.html), kept here as the
-brand reference sheet): three plates of the same form — white over
-screen-blended cyan and magenta — slightly out of register, moving on quantized
-clocks, occasionally slicing into bands.
+The identity is the **"Rewrite" mark**: three plates of the same form — white
+over screen-blended cyan and magenta — slightly out of register, moving on
+quantized clocks, occasionally slicing into bands.
 
 The page is an original system grown from that physics. The conceit is a press
 proof (**proof nº 2LS-001**): crop marks at the viewport corners, a job slug
