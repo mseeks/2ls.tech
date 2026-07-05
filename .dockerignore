@@ -1,0 +1,7 @@
+# Keep the image to just the server config and the site files.
+.git
+.github
+README.md
+two-ls-logos-expressive.html
+.gitignore
+.dockerignore
