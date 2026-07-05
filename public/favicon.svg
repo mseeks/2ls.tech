@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- The Rewrite mark as a favicon: two L's in three plates, jittering on a
+       discrete clock (SMIL). Browsers that don't animate favicons (Chrome,
+       Safari) show the first frame — the mark at rest. -->
+  <rect width="100" height="100" rx="18" fill="#141318"/>
+  <g fill="none" stroke-width="9" stroke-linecap="square">
+    <g stroke="#00E5FF">
+      <animateTransform attributeName="transform" type="translate" calcMode="discrete"
+        values="-4 -3; -8 1; -3 -4; -7 3; -4 -1.5; -4 -3" dur="2.6s" repeatCount="indefinite"/>
+      <path d="M30 24 V70 H52"/><path d="M60 24 V70 H82"/>
+    </g>
+    <g stroke="#FF2BD6">
+      <animateTransform attributeName="transform" type="translate" calcMode="discrete"
+        values="4 3; 7 -1; 3 4; 8 -3; 4 1.5; 4 3" dur="2.6s" repeatCount="indefinite"/>
+      <path d="M30 24 V70 H52"/><path d="M60 24 V70 H82"/>
+    </g>
+    <g stroke="#F2F2F0">
+      <path d="M30 24 V70 H52"/><path d="M60 24 V70 H82"/>
+    </g>
+  </g>
+</svg>
