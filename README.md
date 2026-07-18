@@ -25,5 +25,10 @@ Every animation runs on `steps()` — nothing eases — and all motion stops und
 
 ## Serving
 
-CI builds `ghcr.io/mseeks/2ls.tech:latest` on every push to `main` — a plain
-`docker build` of nginx + `public/` (see `Dockerfile` / `nginx.conf`).
+Hosted on **Vercel**: a push to `main` deploys production at
+https://2ls.tech (`www` redirects to the apex), and every pull request gets a
+preview URL. There is no build step. [`vercel.json`](./vercel.json) points
+Vercel at `public/` and turns on clean URLs (`/foo` serves `foo.html`), the
+extension-less behavior nginx used to provide; HTML revalidation, compression,
+and TLS are platform defaults. The project and domains are managed in the
+Vercel dashboard.
