@@ -8,7 +8,8 @@ One static page, no build step: `public/index.html` is the whole site. Open it
 in a browser and that's 2ls.tech. Two plain companion pages sit beside it:
 `public/privacy.html` and `public/terms.html` (served at `/privacy` and
 `/terms`), the privacy policy and messaging terms for the studio's SMS/MMS
-notifications, written to Twilio's A2P 10DLC campaign requirements.
+messaging (alerts and two-way chat with its AI assistants), written to
+Twilio's A2P 10DLC campaign requirements.
 
 ## Design
 
