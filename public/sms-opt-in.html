@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMS/MMS Opt-in Process — Two Ls</title>
+<meta name="description" content="How Two Ls LLC collects consent for its SMS/MMS messaging: who opts in, the verbal script, what is recorded, and the confirmation message.">
+<meta name="theme-color" content="#141318">
+<link rel="canonical" href="https://2ls.tech/sms-opt-in">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* Plain reading page in the site's palette. No motion, no script. */
+  :root{--bg:#141318;--ink:#F2F2F0;--muted:#8A8894;--dim:#57555F;--line:#2C2A33;--cyan:#00E5FF;--mag:#FF2BD6;color-scheme:dark;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--mag);color:var(--bg);}
+  a{color:var(--cyan);text-decoration:underline;text-decoration-color:rgba(0,229,255,.4);text-underline-offset:3px;}
+  a:hover{text-decoration-color:var(--cyan);}
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:4px;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+  .mono a{color:inherit;text-decoration:none;}
+  .mono a:hover{color:var(--cyan);}
+  header,footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:46rem;margin:0 auto;padding:18px 20px;}
+  header{border-bottom:1px solid var(--line);}
+  footer{border-top:1px solid var(--line);}
+  main{max-width:46rem;margin:0 auto;padding:36px 20px 56px;}
+  h1{margin:0 0 6px;font-size:clamp(30px,5vw,44px);line-height:1.05;letter-spacing:-.02em;}
+  .meta{margin:0 0 28px;color:var(--muted);}
+  h2{margin:30px 0 8px;font-size:17px;letter-spacing:-.01em;}
+  p{margin:0 0 12px;color:var(--muted);}
+  p strong{color:var(--ink);}
+  blockquote{margin:12px 0;padding:12px 16px;border-left:2px solid var(--line);color:var(--muted);}
+  blockquote p:last-child{margin-bottom:0;}
+  code{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.92em;color:var(--ink);}
+</style>
+</head>
+<body>
+<header class="mono">
+  <a href="/">&larr; Two&nbsp;Ls&nbsp;LLC</a>
+  <a href="mailto:hello@2ls.tech">hello@2ls.tech</a>
+</header>
+
+<main>
+  <h1>SMS/MMS Opt-in Process</h1>
+  <p class="meta">Two Ls LLC &middot; Last updated: August 15, 2026</p>
+
+  <p>This page documents how Two Ls LLC (&ldquo;we&rdquo;) collects consent for its SMS/MMS messaging. Terms: <a href="https://2ls.tech/terms">https://2ls.tech/terms</a> &middot; Privacy: <a href="https://2ls.tech/privacy">https://2ls.tech/privacy</a>.</p>
+
+  <h2>Who opts in</h2>
+  <p>Only Two Ls LLC&rsquo;s own personnel: the owner and collaborators working with the studio. The messages are internal, alerts and two-way conversation with the studio&rsquo;s internal tools and AI assistants. Nothing is offered to the public and no marketing is sent.</p>
+
+  <h2>How consent is collected: verbally, one person at a time</h2>
+  <p>In person or by phone, a Two Ls LLC representative reads the script below word for word, asks for an explicit yes or no, and enrolls the number only on a clear yes. Anything other than a clear yes means no enrollment. Opting in is voluntary and isn&rsquo;t a condition of anything. Consent covers this messaging program only and is never transferred or shared.</p>
+
+  <h2 id="script">The script</h2>
+  <blockquote>
+    <p><strong>Representative:</strong> &ldquo;Two Ls can send you automated SMS and MMS messages from our internal tools and AI assistants: system alerts, build and deploy status, reminders, and replies when you text the number. Message frequency varies. Message and data rates may apply. Reply HELP for help or STOP to opt out at any time. Terms are at 2ls.tech/terms and our privacy policy is at 2ls.tech/privacy. Would you like to receive these messages? Please say yes or no.&rdquo;</p>
+    <p><strong>Person:</strong> &ldquo;Yes.&rdquo;</p>
+    <p><strong>Representative:</strong> &ldquo;Great, we&rsquo;ll text you a confirmation shortly.&rdquo;</p>
+  </blockquote>
+
+  <h2>What we record</h2>
+  <p>For every yes: the date and time, the mobile number, who took the consent, and the script version. One log line looks like <code>[YYYY-MM-DD HH:MM] &middot; [+1 555 555 5555] &middot; yes &middot; taken by [name] &middot; script 2026-08-15</code>. Records are kept while the number is enrolled and afterward as proof of consent.</p>
+
+  <h2>Confirmation message</h2>
+  <p>Sent to the number right after enrollment:</p>
+  <blockquote>
+    <p>Two Ls: you&rsquo;re enrolled for SMS/MMS messages from our internal tools and AI assistants. Msg frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel. 2ls.tech/terms 2ls.tech/privacy</p>
+  </blockquote>
+
+  <h2>Keywords</h2>
+  <p>There is no keyword, web form, or paper sign-up. Texting <strong>STOP</strong> unsubscribes (one confirmation message, then nothing more). <strong>START</strong>, <strong>YES</strong>, or <strong>UNSTOP</strong> only re-enrolls a number that previously opted in verbally and later texted STOP. <strong>HELP</strong> returns support info: <a href="mailto:hello@2ls.tech">hello@2ls.tech</a>.</p>
+</main>
+
+<footer class="mono">
+  <span>&copy; 2026 Two&nbsp;Ls&nbsp;LLC &middot; Minneapolis, MN</span>
+  <span><a href="/privacy">privacy</a> &middot; <a href="/terms">terms</a> &middot; <a href="/sms-opt-in">sms opt-in</a></span>
+</footer>
+</body>
+</html>

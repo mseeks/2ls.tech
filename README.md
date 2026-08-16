@@ -5,11 +5,12 @@ Minneapolis. Only product: [Everwhen](https://playeverwhen.com). Contact:
 hello@2ls.tech.
 
 One static page, no build step: `public/index.html` is the whole site. Open it
-in a browser and that's 2ls.tech. Two plain companion pages sit beside it:
-`public/privacy.html` and `public/terms.html` (served at `/privacy` and
-`/terms`), the privacy policy and messaging terms for the studio's SMS/MMS
-messaging (alerts and two-way chat with its AI assistants), written to
-Twilio's A2P 10DLC campaign requirements.
+in a browser and that's 2ls.tech. Three plain companion pages sit beside it,
+linked from the footer: `public/privacy.html`, `public/terms.html`, and
+`public/sms-opt-in.html` (served at `/privacy`, `/terms`, `/sms-opt-in`), the
+privacy policy, messaging terms, and consent-process documentation for the
+studio's SMS/MMS messaging (alerts and two-way chat with its AI assistants),
+written to Twilio's A2P 10DLC campaign requirements.
 
 ## Design
 
