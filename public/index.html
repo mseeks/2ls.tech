@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Two Ls — indie game &amp; software studio</title>
-<meta name="description" content="Two Ls is a one-person indie game and software studio in Minneapolis. Now playing: Everwhen.">
+<meta name="description" content="Two Ls is a one-person indie game and software studio in Minneapolis. Now playing: Everwhen. Now running: Timi.">
 <meta name="theme-color" content="#141318">
 <link rel="canonical" href="https://2ls.tech/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Two Ls">
 <meta property="og:title" content="Two Ls — indie game &amp; software studio">
-<meta property="og:description" content="A one-person indie game and software studio in Minneapolis. Now playing: Everwhen.">
+<meta property="og:description" content="A one-person indie game and software studio in Minneapolis. Now playing: Everwhen. Now running: Timi.">
 <meta property="og:url" content="https://2ls.tech/">
 <meta property="og:image" content="https://2ls.tech/og.png">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="Two Ls LLC — the mark&#39;s two lit L&#39;s inside the company name">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Two Ls — indie game &amp; software studio">
-<meta name="twitter:description" content="A one-person indie game and software studio in Minneapolis. Now playing: Everwhen.">
+<meta name="twitter:description" content="A one-person indie game and software studio in Minneapolis. Now playing: Everwhen. Now running: Timi.">
 <meta name="twitter:image" content="https://2ls.tech/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -261,14 +261,14 @@
   .plate:hover::before,.plate:focus-visible::before{opacity:1;transform:translate(-.07em,-.045em);}
   .plate:hover::after,.plate:focus-visible::after{opacity:1;transform:translate(.07em,.045em);}
 
-  /* ---------- 01 · everwhen ---------- */
-  .ew-grid{
+  /* ---------- 01 · everwhen (product furniture, shared with 02) ---------- */
+  .pgrid{
     display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4.5vw,64px);
     align-items:start;
   }
-  @media (max-width:840px){.ew-grid{grid-template-columns:1fr;}}
-  /* the product itself: everwhen's reel, framed like everything else on
-     the sheet. The label underneath only shows if the media can't load. */
+  @media (max-width:840px){.pgrid{grid-template-columns:1fr;}}
+  /* the product itself, framed like everything else on the sheet. The
+     data-label underneath only shows if the media can't load. */
   .reel{
     position:relative;
     border:1px solid var(--line);
@@ -277,7 +277,7 @@
     background:var(--panel);
   }
   .reel::before{
-    content:"everwhen · reel";
+    content:attr(data-label);
     position:absolute;inset:0;
     display:grid;place-items:center;
     font-family:'IBM Plex Mono',ui-monospace,monospace;
@@ -371,7 +371,55 @@
   .cta .url{color:var(--dim);text-transform:none;letter-spacing:.04em;transition:color .15s steps(2);}
   .cta:hover .url,.cta:focus-visible .url{color:inherit;}
 
-  /* ---------- 02 · contact ---------- */
+  /* ---------- 02 · timi ---------- */
+  /* the product itself, again: Timi's real poses, the app's golden
+     snapshots at 56×48 px, stepped through on a quantized clock. She is
+     scaled by whole pixels only (--px, read off the panel), so nothing
+     ever blurs. */
+  .flip{aspect-ratio:1000/560;cursor:pointer;}
+  @media (max-width:640px){.flip{aspect-ratio:4/3;}}
+  .flip-area{position:absolute;inset:22px 22px 44px;display:grid;place-items:center;}
+  .flip img{
+    display:block;
+    width:calc(56px*var(--px,4));height:calc(48px*var(--px,4));
+    image-rendering:pixelated;
+  }
+  .flip-cap{
+    position:absolute;bottom:13px;left:16px;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  }
+  .flip-cap.r{left:auto;right:16px;}
+  .flip-cap b{color:var(--cyan);font-weight:500;}
+  /* a command keeps its case; one click selects the whole thing */
+  .spec .cmd{text-transform:none;letter-spacing:.02em;user-select:all;overflow-wrap:anywhere;}
+
+  /* the contact sheet: her poses at 1:1. Point at one to hold it. */
+  .frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px;}
+  .frames button{
+    appearance:none;margin:0;padding:9px 3px 7px;
+    display:grid;justify-items:center;gap:6px;
+    background:rgba(242,242,240,.05);border:1px solid transparent;border-radius:2px;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);
+    cursor:pointer;
+    transition:background .12s steps(2),border-color .12s steps(2),color .12s steps(2);
+  }
+  .frames img{display:block;width:56px;height:48px;image-rendering:pixelated;}
+  .frames button:hover,.frames button:focus-visible{background:rgba(242,242,240,.09);color:var(--muted);}
+  .frames button.on{
+    background:rgba(242,242,240,.13);color:var(--ink);
+    border-color:rgba(242,242,240,.22);
+    box-shadow:-1px 0 rgba(0,229,255,.35),1px 0 rgba(255,43,214,.35);
+  }
+  /* poses step in when the band enters, on the ledger's clock */
+  .js-reveal .frames button{opacity:0;}
+  @keyframes fstep{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:no-preference){
+    .band.in .frames button{animation:fstep .3s steps(3,end) both;animation-delay:calc(var(--i)*40ms);}
+  }
+
+  /* ---------- 03 · contact ---------- */
   .mail-big{
     display:inline-block;
     font-weight:700;
@@ -461,8 +509,8 @@
         <h2><a class="plate" data-t="Everwhen" href="https://playeverwhen.com">Everwhen</a></h2>
       </div>
 
-      <div class="ew-grid">
-        <div class="reel reveal" id="reel">
+      <div class="pgrid">
+        <div class="reel reveal" id="reel" data-label="everwhen · reel">
           <video muted loop playsinline preload="none" aria-label="Everwhen gameplay reel"
             poster="https://playeverwhen.com/reel/reel-dark-poster.png">
             <source src="https://playeverwhen.com/reel/reel-dark.mp4" type="video/mp4">
@@ -495,7 +543,63 @@
     </div>
   </section>
 
-  <!-- 02 · CONTACT -->
+  <!-- TIMI -->
+  <section id="timi" style="padding-top:0;">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="slabel">
+          <svg class="reg" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+            <g fill="none" stroke-width="1.6"><g stroke="#FF2BD6" opacity=".75" transform="translate(1.1,.8)"><circle cx="10" cy="10" r="5"/><path d="M10 1.5v3.5M10 15v3.5M1.5 10H5M15 10h3.5"/></g><g stroke="#00E5FF"><circle cx="10" cy="10" r="5"/><path d="M10 1.5v3.5M10 15v3.5M1.5 10H5M15 10h3.5"/></g></g>
+          </svg>
+          now running
+        </span>
+        <h2><a class="plate" data-t="Timi" href="https://github.com/2ls-llc/timi">Timi</a></h2>
+      </div>
+
+      <div class="pgrid">
+        <div class="reel flip reveal" id="flip">
+          <div class="flip-area"><img id="flip-img" src="timi/idle.png" width="56" height="48" alt="Timi, idle"></div>
+          <span class="flip-cap num" id="flip-cap">frame&nbsp;<b>01</b>/13 &middot; idle</span>
+          <span class="flip-cap r num hide-s" id="flip-px" aria-hidden="true">56&times;48 &middot; &times;4</span>
+        </div>
+        <div class="reveal d1">
+          <p class="body">A tiny pixel cat who lives <strong>on top of your windows</strong> and is also a focus timer. She breathes, naps, hunts the last ten seconds, and <strong>pounces at 0:00</strong>. Between sessions she's a toy: drag her, fling her, pat her.</p>
+          <dl class="spec">
+            <div class="row"><dt>canvas</dt><dd>56 &times; 48 px &middot; one cat</dd></div>
+            <div class="row"><dt>runs on</dt><dd>macOS 14+ &middot; universal</dd></div>
+            <div class="row"><dt>install</dt><dd class="cmd">brew install 2ls-llc/tap/timi</dd></div>
+            <div class="row"><dt>status</dt><dd class="live">out now &middot; 2026</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="band reveal" id="sheet-band">
+        <div class="band-head">
+          <span>poses, straight from the app</span>
+          <span class="ct num">frame&nbsp;<b id="fno">01</b>/13</span>
+        </div>
+        <div class="frames" id="sheet">
+          <button type="button" class="on" style="--i:0"><img src="timi/idle.png" alt="" width="56" height="48">idle</button>
+          <button type="button" style="--i:1"><img src="timi/bored.png" alt="" width="56" height="48">bored</button>
+          <button type="button" style="--i:2"><img src="timi/running.png" alt="" width="56" height="48">running</button>
+          <button type="button" style="--i:3"><img src="timi/nap.png" alt="" width="56" height="48">nap</button>
+          <button type="button" style="--i:4"><img src="timi/hunt.png" alt="" width="56" height="48">the hunt</button>
+          <button type="button" style="--i:5"><img src="timi/wiggle.png" alt="" width="56" height="48">wiggle</button>
+          <button type="button" style="--i:6"><img src="timi/zoomies.png" alt="" width="56" height="48">zoomies</button>
+          <button type="button" style="--i:7"><img src="timi/done.png" alt="" width="56" height="48">done</button>
+          <button type="button" style="--i:8"><img src="timi/loaf.png" alt="" width="56" height="48">loaf</button>
+          <button type="button" style="--i:9"><img src="timi/held.png" alt="" width="56" height="48">held</button>
+          <button type="button" data-pat style="--i:10"><img src="timi/pat.png" alt="" width="56" height="48">pat</button>
+          <button type="button" style="--i:11"><img src="timi/bonk.png" alt="" width="56" height="48">bonk</button>
+          <button type="button" style="--i:12"><img src="timi/sad.png" alt="" width="56" height="48">sad</button>
+        </div>
+      </div>
+
+      <a class="cta reveal" href="https://github.com/2ls-llc/timi">Get Timi &mdash; <span class="url">github.com/2ls-llc/timi</span></a>
+    </div>
+  </section>
+
+  <!-- 03 · CONTACT -->
   <section id="hello" style="padding-top:0;">
     <div class="container">
       <p class="slabel slabel-solo reveal">
@@ -614,6 +718,60 @@
         tick();
       }, 2400 + Math.random()*2600);
     })();
+  }
+
+  // timi: her poses step through on a quantized clock. Pointing at a pose
+  // in the sheet holds it a while; pointing at her is a pat.
+  var flip = document.getElementById('flip');
+  var cells = Array.prototype.slice.call(document.querySelectorAll('#sheet button'));
+  if(flip && cells.length){
+    var big = document.getElementById('flip-img'), fcap = document.getElementById('flip-cap'),
+        fno = document.getElementById('fno'), fpx = document.getElementById('flip-px'),
+        area = flip.querySelector('.flip-area'), patCell = document.querySelector('#sheet [data-pat]');
+    var cur = 0, holdUntil = 0, patting = false, patTimer = 0;
+    function two(n){ return ('0'+n).slice(-2); }
+    function label(b){ return b.textContent.trim(); }
+    function show(b, cap){
+      big.src = b.querySelector('img').src;
+      big.alt = 'Timi, ' + label(b);
+      fcap.innerHTML = cap;
+    }
+    function pose(i){
+      cur = i;
+      cells.forEach(function(b, j){ b.classList.toggle('on', j === i); });
+      if(fno) fno.textContent = two(i+1);
+      if(!patting) show(cells[i], 'frame&nbsp;<b>'+two(i+1)+'</b>/'+cells.length+' &middot; '+label(cells[i]));
+    }
+    cells.forEach(function(b, i){
+      function hold(){ pose(i); holdUntil = Date.now() + 4000; }
+      b.addEventListener('pointerenter', hold);
+      b.addEventListener('focus', hold);
+      b.addEventListener('click', hold);
+    });
+    if(patCell){
+      flip.addEventListener('pointerenter', function(){
+        clearTimeout(patTimer); patting = true; show(patCell, 'pat &middot; purr');
+      });
+      flip.addEventListener('pointerleave', function(e){
+        // a touch leaves at once; let the pat land before she goes back
+        patTimer = setTimeout(function(){ patting = false; pose(cur); }, e.pointerType === 'touch' ? 1200 : 0);
+      });
+    }
+    if(!reduce){
+      setInterval(function(){
+        if(patting || Date.now() < holdUntil) return;
+        pose((cur + 1) % cells.length);
+      }, 1500);
+    }
+    // whole pixels only: the largest integer scale the panel can hold
+    function fit(){
+      var s = Math.max(1, Math.floor(Math.min(area.clientWidth/56, area.clientHeight/48)));
+      flip.style.setProperty('--px', s);
+      if(fpx) fpx.innerHTML = '56&times;48 &middot; &times;'+s;
+    }
+    fit();
+    if('ResizeObserver' in window) new ResizeObserver(fit).observe(area);
+    else addEventListener('resize', fit, {passive:true});
   }
 
   // leaving the page knocks the title off register

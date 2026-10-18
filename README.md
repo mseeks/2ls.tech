@@ -1,8 +1,9 @@
 # 2ls.tech
 
 Company site for **Two Ls LLC** — a one-person indie game & software studio in
-Minneapolis. Only product: [Everwhen](https://playeverwhen.com). Contact:
-hello@2ls.tech.
+Minneapolis. Products: [Everwhen](https://playeverwhen.com), a game, and
+[Timi](https://github.com/2ls-llc/timi), a pixel-cat focus timer for the Mac.
+Contact: hello@2ls.tech.
 
 One static page, no build step: `public/index.html` is the whole site. Open it
 in a browser and that's 2ls.tech. Three plain companion pages sit beside it,
@@ -25,6 +26,11 @@ offsets as they drift. The hero sets the full company name with the mark's two
 lit L's inside "LLC" — the two L's hiding in plain sight. Everwhen's section
 embeds the game's own reel and the **ledger**, a strip of history blocks that
 rewrite themselves one edit at a time (point at one to edit history yourself).
+Timi's section is a flipbook of her real poses: the app's golden test
+snapshots (`public/timi/*.png`, copied verbatim from
+`Tests/snapshots/golden-timi-*.png` in the timi repo, 56×48 px each) step
+through on a quantized clock, scaled by whole pixels only. The contact sheet
+below holds whichever pose you point at, and pointing at her is a pat.
 Every animation runs on `steps()` — nothing eases — and all motion stops under
 `prefers-reduced-motion`.
 
